@@ -1,4 +1,4 @@
-class Admin::FreeShippingSettingsController < Admin::BaseController
+class Spree::Admin::FreeShippingSettingsController < Admin::BaseController
 
   def update
     Spree::Config.set(params[:preferences])
