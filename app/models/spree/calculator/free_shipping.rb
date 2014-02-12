@@ -1,6 +1,6 @@
 class Spree::Calculator::FreeShipping < Spree::Calculator
   preference :amount, :decimal, :default => 0
-  attr_accessible :preferred_amount
+  #attr_accessible :preferred_amount
   
   def self.description
     "Free Shipping"
@@ -18,8 +18,8 @@ class Spree::Calculator::FreeShipping < Spree::Calculator
 
   def available?(object)
     logger.debug "********* free shipping available"
-    logger.debug "********* free shipping available = " + (object.item_total.to_i >= 50).to_s
+    logger.debug "********* free shipping available = " + (object.total.to_i >= 50).to_s
     logger.debug "********* free shipping available"
-    object.item_total.to_i >= 50
+    object.total.to_i >= 50
   end
 end
